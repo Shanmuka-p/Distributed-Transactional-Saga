@@ -28,10 +28,11 @@ public class OrderService {
 
     @Transactional
     public OrderResponse createOrder(CreateOrderRequest request) {
-        String orderId = request.getOrderId();
-        if (orderId == null || orderId.trim().isEmpty()) {
-            orderId = UUID.randomUUID().toString();
+        String resolvedOrderId = request.getOrderId();
+        if (resolvedOrderId == null || resolvedOrderId.trim().isEmpty()) {
+            resolvedOrderId = UUID.randomUUID().toString();
         }
+        final String orderId = resolvedOrderId;
 
         var existingOrderOpt = orderRepository.findById(orderId);
         if (existingOrderOpt.isPresent()) {
