@@ -40,15 +40,7 @@ public class PaymentController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
 
-        if (orderId.equals(submissionConfig.getSuccessfulOrderId()) && delayedOrders.add(orderId)) {
-            log.info("Payment Service - Simulating payment delay (5s) for orderId: {}", orderId);
-            try {
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                log.warn("Payment Service - Sleep interrupted");
-            }
-        }
+        // Delay removed for REQ-7
 
         processedPayments.add(orderId);
         log.info("Payment Service - Process successful for orderId: {}", orderId);

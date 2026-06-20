@@ -21,12 +21,12 @@
 					"raw": "{\n  \"orderId\": \"100\",\n  \"customerId\": 1,\n  \"productId\": 1,\n  \"quantity\": 2,\n  \"unitPrice\": 50.00\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8083/api/orders",
+					"raw": "http://localhost:8080/api/orders",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8083",
+					"port": "8080",
 					"path": [
 						"api",
 						"orders"
@@ -41,12 +41,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8083/api/orders/100",
+					"raw": "http://localhost:8080/api/orders/100",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8083",
+					"port": "8080",
 					"path": [
 						"api",
 						"orders",
@@ -71,12 +71,12 @@
 					"raw": "{\n  \"orderId\": \"201\",\n  \"customerId\": 1,\n  \"productId\": 1,\n  \"quantity\": 2,\n  \"unitPrice\": 50.00\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8083/api/orders",
+					"raw": "http://localhost:8080/api/orders",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8083",
+					"port": "8080",
 					"path": [
 						"api",
 						"orders"
@@ -91,12 +91,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8083/api/orders/201",
+					"raw": "http://localhost:8080/api/orders/201",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8083",
+					"port": "8080",
 					"path": [
 						"api",
 						"orders",
@@ -121,12 +121,12 @@
 					"raw": "{\n  \"orderId\": \"302\",\n  \"customerId\": 1,\n  \"productId\": 1,\n  \"quantity\": 2,\n  \"unitPrice\": 50.00\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8083/api/orders",
+					"raw": "http://localhost:8080/api/orders",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8083",
+					"port": "8080",
 					"path": [
 						"api",
 						"orders"
@@ -141,12 +141,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8083/api/orders/302",
+					"raw": "http://localhost:8080/api/orders/302",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8083",
+					"port": "8080",
 					"path": [
 						"api",
 						"orders",

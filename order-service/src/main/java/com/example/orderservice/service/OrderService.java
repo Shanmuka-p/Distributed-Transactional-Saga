@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 public class OrderService {
@@ -53,14 +54,14 @@ public class OrderService {
                 .build();
 
         log.info("Saga order {} - Saving initial order record in DB", orderId);
-        order = orderRepository.save(order);
+        final Order savedOrder = orderRepository.save(order);
 
-        orchestrator.startSaga(order);
+        OrderResponse initialResponse = mapToResponse(savedOrder);
+        initialResponse.setMessage("Order creation process initiated.");
 
-        Order finalOrder = orderRepository.findById(orderId)
-                .orElseThrow(() -> new RuntimeException("Order not found after creation: " + orderId));
+        CompletableFuture.runAsync(() -> orchestrator.startSaga(savedOrder));
 
-        return mapToResponse(finalOrder);
+        return initialResponse;
     }
 
     public OrderResponse getOrder(String orderId) {

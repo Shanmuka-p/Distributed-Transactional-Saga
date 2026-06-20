@@ -11,11 +11,12 @@ public class OrderResponse {
     private BigDecimal unitPrice;
     private BigDecimal amount;
     private String status;
+    private String message;
 
     public OrderResponse() {
     }
 
-    public OrderResponse(String orderId, Long customerId, Long productId, Integer quantity, BigDecimal unitPrice, BigDecimal amount, String status) {
+    public OrderResponse(String orderId, Long customerId, Long productId, Integer quantity, BigDecimal unitPrice, BigDecimal amount, String status, String message) {
         this.orderId = orderId;
         this.customerId = customerId;
         this.productId = productId;
@@ -23,6 +24,7 @@ public class OrderResponse {
         this.unitPrice = unitPrice;
         this.amount = amount;
         this.status = status;
+        this.message = message;
     }
 
     public String getOrderId() {
@@ -81,6 +83,14 @@ public class OrderResponse {
         this.status = status;
     }
 
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     public static OrderResponseBuilder builder() {
         return new OrderResponseBuilder();
     }
@@ -93,6 +103,7 @@ public class OrderResponse {
         private BigDecimal unitPrice;
         private BigDecimal amount;
         private String status;
+        private String message;
 
         public OrderResponseBuilder orderId(String orderId) {
             this.orderId = orderId;
@@ -129,8 +140,13 @@ public class OrderResponse {
             return this;
         }
 
+        public OrderResponseBuilder message(String message) {
+            this.message = message;
+            return this;
+        }
+
         public OrderResponse build() {
-            return new OrderResponse(orderId, customerId, productId, quantity, unitPrice, amount, status);
+            return new OrderResponse(orderId, customerId, productId, quantity, unitPrice, amount, status, message);
         }
     }
 }

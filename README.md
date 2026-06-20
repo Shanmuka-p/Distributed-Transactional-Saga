@@ -110,7 +110,7 @@ All services will initialize and start cascadingly once their healthy conditions
   "unitPrice": 50.00
 }
 ```
-* **Success Response (HTTP 201)**:
+* **Success Response (HTTP 202)**:
 ```json
 {
   "orderId": "100",
@@ -119,7 +119,8 @@ All services will initialize and start cascadingly once their healthy conditions
   "quantity": 2,
   "unitPrice": 50.00,
   "amount": 100.00,
-  "status": "ORDER_COMPLETED"
+  "status": "ORDER_CREATED",
+  "message": "Order creation process initiated."
 }
 ```
 
