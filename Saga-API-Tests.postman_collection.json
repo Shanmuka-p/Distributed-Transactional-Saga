@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "893c52e4-e0b6-4ff8-a3f1-b952a20be9d5",
+		"name": "Order Management Saga Orchestrator",
+		"description": "Collection of requests to test the Order Management System Saga Orchestrator, including success flows, payment failures, inventory failures, and compensations.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Create Successful Order (ID 100)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"orderId\": \"100\",\n  \"customerId\": 1,\n  \"productId\": 1,\n  \"quantity\": 2,\n  \"unitPrice\": 50.00\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Get Successful Order (ID 100)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/orders/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"orders",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Create Payment Failure Order (ID 201)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"orderId\": \"201\",\n  \"customerId\": 1,\n  \"productId\": 1,\n  \"quantity\": 2,\n  \"unitPrice\": 50.00\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Get Payment Failure Order (ID 201)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/orders/201",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"orders",
+						"201"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Create Inventory Failure Order (ID 302)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"orderId\": \"302\",\n  \"customerId\": 1,\n  \"productId\": 1,\n  \"quantity\": 2,\n  \"unitPrice\": 50.00\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Get Inventory Failure Order (ID 302)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/orders/302",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"orders",
+						"302"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
